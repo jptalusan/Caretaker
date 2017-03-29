@@ -39,9 +39,13 @@ public class MainActivity extends AppCompatActivity {
 
         //Glide test
         iv = (ImageView) findViewById(R.id.imageView);
+        //with base64 - load()
         byte[] imageByteArray = Base64.decode(Config.BASE_64, Base64.DEFAULT);
+
+        //or url
+        String url = "https://maps.googleapis.com/maps/api/staticmap?size=640x480&center=40.714728,-73.998672&maptype=roadmap&zoom=10&key=AIzaSyBzd0kxFlQBq5Kiks42PR0fL0iRp_k2CKw";
         Glide.with(this)
-                .load(imageByteArray)
+                .load(url)
                 .asBitmap()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(iv);

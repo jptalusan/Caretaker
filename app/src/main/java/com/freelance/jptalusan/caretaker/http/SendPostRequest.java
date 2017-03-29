@@ -4,8 +4,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
-import com.freelance.jptalusan.caretaker.app.Config;
-
 import org.json.JSONObject;
 
 import java.io.BufferedReader;
@@ -114,7 +112,8 @@ public class SendPostRequest extends AsyncTask<String, Void, String> {
             String json = jsonString();
             System.out.println(json);
             //Not working
-            String result = post(Config.URL, json);
+//            String result = post(Config.URL, json);
+            String result = post("http://www.roundsapp.com/post", bowlingJson("JP", "Elaine"));
             System.out.println(result);
 
             //This is working
@@ -125,6 +124,19 @@ public class SendPostRequest extends AsyncTask<String, Void, String> {
         }
 
     }
+
+    String bowlingJson(String player1, String player2) {
+        return "{'winCondition':'HIGH_SCORE',"
+                + "'name':'Bowling',"
+                + "'round':4,"
+                + "'lastSaved':1367702411696,"
+                + "'dateStarted':1367702378785,"
+                + "'players':["
+                + "{'name':'" + player1 + "','history':[10,8,6,7,8],'color':-13388315,'total':39},"
+                + "{'name':'" + player2 + "','history':[6,10,5,10,10],'color':-48060,'total':41}"
+                + "]}";
+    }
+
 
     String jsonString() {
         return "{'name':'abc',"

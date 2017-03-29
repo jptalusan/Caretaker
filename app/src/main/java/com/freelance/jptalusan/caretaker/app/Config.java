@@ -18,6 +18,7 @@ public class Config {
 
     public static final String SHARED_PREF = "ah_firebase";
 
+    public static final String API_KEY_MAPS = "AIzaSyBzd0kxFlQBq5Kiks42PR0fL0iRp_k2CKw"
     public static final String URL = "https://studytutorial.in/post.php";
 
     public static final String BASE_64 = "/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcg\n" +
